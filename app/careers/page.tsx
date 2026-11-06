@@ -1,46 +1,62 @@
 import type { Metadata } from 'next';
 import { Icon } from '@/components/Icon';
-import { PageHero, SectionHead, TalkButton } from '@/components/ui';
-import { Filterable } from '@/components/interactive';
-import Link from 'next/link';
+import { PageHero, SectionHead, StatNum, Sticker, TalkButton } from '@/components/ui';
 import { Marquee } from '@/components/sections';
-import { JOBS, JOB_FILTERS, PERKS } from '@/lib/content';
+import { CAREERS, SITE } from '@/lib/content';
+import type { IconName } from '@/components/Icon';
 
 export const metadata: Metadata = {
-  title: 'Careers — Join the Crew',
-  description: 'Open roles for WordPress developers, frontend engineers, product designers and marketers. Remote-first.',
+  title: 'Careers — Join the Wixnova Studio',
+  description: CAREERS.intro,
 };
-
-const STEPS = [
-  { t: 'Apply', d: 'Portfolio or GitHub. No cover letter.' },
-  { t: 'Intro call', d: '30 minutes to get to know each other.' },
-  { t: 'Paid trial', d: 'A small real task — and we pay you.' },
-  { t: 'Offer', d: 'A decision within days. Welcome aboard!' },
-];
 
 export default function CareersPage() {
   return (
     <>
       <PageHero
-        label="Careers" line1="Join the" line2="crew"
+        label="Careers at Wixnova" line1="Brag-worthy" line2="work only."
         stickers={[
-          { text: 'We are hiring', variant: 'lime', pos: '-top-3 left-[20%]', rotate: '-6deg' },
-          { text: 'Remote-first', pos: 'bottom-2 right-[18%]', rotate: '5deg' },
+          { text: 'Remote first', variant: 'lime', pos: '-top-3 left-[16%]', rotate: '-6deg' },
+          { text: 'No layers, no theater', pos: 'bottom-2 right-[10%]', rotate: '5deg' },
         ]}
-        lead="Small, senior, remote-first. We ship websites, products and growth for ambitious brands — and we need a few more great people."
+        lead={CAREERS.intro}
       >
-        <div className="mt-9 flex justify-center gap-3" data-reveal><TalkButton href="#roles" size="lg">See open roles</TalkButton></div>
+        <div className="mt-9 flex justify-center gap-3" data-reveal=""><TalkButton href="#join" size="lg">Introduce yourself</TalkButton></div>
       </PageHero>
+
+      <section className="container pb-20" aria-label="The studio in numbers">
+        <dl className="mx-auto grid max-w-5xl grid-cols-2 gap-8 text-center md:grid-cols-4" data-stagger="">
+          {CAREERS.stats.map((s) => (
+            <div key={s.label}><dd className="cond text-7xl md:text-8xl"><StatNum value={s.value} suffix={s.suffix} text={s.text} /></dd><dt className="mt-2 font-medium text-ink-3">{s.label}</dt></div>
+          ))}
+        </dl>
+      </section>
 
       <Marquee />
 
-      <section className="section" aria-labelledby="perks-title">
+      <section className="section" aria-labelledby="beliefs-title">
         <div className="container">
-          <SectionHead id="perks-title" label="Perks" line1="Built for" line2="deep work" />
-          <ul className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {PERKS.map((p) => (
-              <li key={p.title} className="card card-hover" style={{ transform: `rotate(${p.r})` }} data-reveal>
-                <span className="icon-sticker"><Icon name={p.icon} size={26} /></span>
+          <SectionHead id="beliefs-title" label="What we stand for" line1="Four beliefs" line2="behind every project." />
+          <p className="lead mt-6 max-w-2xl" data-reveal="">They&apos;re not posters on a wall. They&apos;re how we hire, how we critique work, and how we treat each other on a hard Tuesday.</p>
+          <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4" data-stagger="">
+            {CAREERS.beliefs.map((b, i) => (
+              <article key={b.title} className={`card card-hover ${i === 2 ? '!bg-lime' : ''}`}>
+                <span className="font-cond text-5xl text-lime-700">0{i + 1}</span>
+                <h3 className="cond mt-3 text-3xl">{b.title}</h3>
+                <p className="mt-2 text-ink-3">{b.desc}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section bg-paper-2" aria-labelledby="perks-title">
+        <div className="container">
+          <SectionHead id="perks-title" label="Life at Wixnova" line1="Perks that actually" line2="move the needle." />
+          <ul className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3" data-stagger="">
+            {CAREERS.perks.map((p) => (
+              <li key={p.title} className="card card-hover">
+                <span className="icon-sticker"><Icon name={p.icon as IconName} size={26} /></span>
                 <h3 className="cond mt-6 text-3xl">{p.title}</h3>
                 <p className="mt-2 text-ink-3">{p.desc}</p>
               </li>
@@ -49,49 +65,34 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* SAMPLE CONTENT — replace roles in lib/content.ts */}
-      <section id="roles" className="section scroll-mt-20 bg-paper-2" aria-labelledby="roles-title">
-        <div className="container">
-          <SectionHead id="roles-title" label="Open roles" line1="Find your" line2="seat" />
-          <Filterable
-            filters={JOB_FILTERS}
-            label="Filter roles"
-            toolbarClass="mt-8 flex flex-wrap gap-2 md:justify-end"
-            className="mt-10 space-y-3"
-          >
-            {JOBS.map((j) => (
-              <details key={j.title} className="group rounded-[1.75rem] bg-paper-white transition open:bg-lime" data-filter-item data-category={j.dept}>
-                <summary className="flex cursor-pointer list-none flex-wrap items-center gap-4 px-6 py-6 md:px-8 [&::-webkit-details-marker]:hidden">
-                  <span className="cond flex-1 text-3xl md:text-4xl">{j.title}</span>
-                  <span className="tag !bg-paper">{j.deptLabel}</span><span className="tag !bg-paper">Remote</span><span className="tag !bg-paper">{j.type}</span>
-                  <span className="grid h-11 w-11 place-items-center rounded-full bg-ink text-lime transition duration-300 group-open:rotate-45">+</span>
-                </summary>
-                <div className="px-6 pb-8 md:px-8">
-                  <p className="max-w-2xl text-lg">{j.desc}</p>
-                  <ul className="check-list mt-5 space-y-2">{j.reqs.map((r) => <li key={r}>{r}</li>)}</ul>
-                  <div className="mt-7"><TalkButton href="/contact?service=careers">Apply for this role</TalkButton></div>
-                </div>
-              </details>
-            ))}
-          </Filterable>
-          <p className="mt-10 text-center text-lg">
-            Don&apos;t see your role? <Link href="/contact?service=careers" className="font-semibold underline decoration-lime decoration-4 underline-offset-4">Send an open application</Link>
-          </p>
-        </div>
-      </section>
-
       <section className="section" aria-labelledby="hire-title">
         <div className="container">
-          <SectionHead id="hire-title" label="Hiring process" line1="Fast, fair" line2="& human" />
-          <ol className="mt-16 grid gap-5 md:grid-cols-4">
-            {STEPS.map((s, i) => (
-              <li key={s.t} className={`card ${i === STEPS.length - 1 ? '!bg-lime' : ''}`} data-reveal>
-                <span className="cond text-7xl text-lime" style={{ WebkitTextStroke: '2px #10140C' }}>0{i + 1}</span>
-                <h3 className="cond mt-3 text-3xl">{s.t}</h3>
-                <p className="mt-2 text-ink-3">{s.d}</p>
+          <SectionHead id="hire-title" label="How we hire" line1="Four steps." line2="Two weeks. No theatre." />
+          <p className="lead mt-6 max-w-2xl" data-reveal="">Most candidates go from &ldquo;hello&rdquo; to &ldquo;offer&rdquo; in under fourteen days, and we pay for any take-home work.</p>
+          <ol className="mt-16 grid gap-5 md:grid-cols-4" data-stagger="">
+            {CAREERS.hiring.map((s, i) => (
+              <li key={s.title} className={`card ${i === 3 ? '!bg-lime' : ''}`}>
+                <span className={`cond text-7xl ${i === 3 ? 'text-ink' : 'text-lime'}`} style={{ WebkitTextStroke: '2px #10140C' }}>0{i + 1}</span>
+                <h3 className="cond mt-3 text-3xl">{s.title}</h3>
+                <p className="mt-2 text-ink-3">{s.desc}</p>
               </li>
             ))}
           </ol>
+        </div>
+      </section>
+
+      <section id="join" className="section scroll-mt-20" aria-labelledby="join-title">
+        <div className="container">
+          <div className="relative overflow-hidden rounded-blob bg-ink p-8 text-paper-white md:p-16" data-reveal="">
+            <div className="squiggle-bg pointer-events-none absolute inset-0 opacity-40" />
+            <Sticker variant="lime" rotate="-5deg" className="relative">Open roles: hiring year-round</Sticker>
+            <h2 id="join-title" className="cond relative mt-8 text-giant text-paper-white" data-split="">Don&apos;t see your role?<br /><span className="text-lime">We hire rare talent.</span></h2>
+            <p className="relative mt-6 max-w-xl text-lg text-ink-4">We hire for trajectory, not titles. Send a short note, a few links, and what you&apos;d want to build with us. We read every message and reply within five business days.</p>
+            <div className="relative mt-10 flex flex-wrap gap-3">
+              <TalkButton href="/contact?service=careers" variant="lime" size="lg">Introduce yourself</TalkButton>
+              <a href={`mailto:${SITE.email}?subject=Careers`} className="btn-line !border-paper-white !text-paper-white hover:!bg-paper-white hover:!text-ink">{SITE.email}</a>
+            </div>
+          </div>
         </div>
       </section>
     </>

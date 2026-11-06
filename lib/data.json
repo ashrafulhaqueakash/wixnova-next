@@ -1,0 +1,231 @@
+{
+  "site": {
+    "name": "Wixnova",
+    "url": "https://wixnova.com",
+    "tagline": "Your Full-Stack Digital Growth Partner.",
+    "intro": "From stunning websites and immersive brand identities to AI-powered marketing and paid advertising — Wixnova delivers scalable digital solutions engineered for compounding growth.",
+    "email": "hello@wixnova.com",
+    "footerLine": "A remote-first agency engineering bold brands across the universe of design, code & growth.",
+    "socials": [
+      { "label": "LinkedIn", "href": "https://www.linkedin.com/in/itsreallyabdullah/" }
+    ]
+  },
+
+  "stats": [
+    { "value": 12, "suffix": "+", "label": "Core services" },
+    { "value": 48, "suffix": "h", "label": "Onboarding time" },
+    { "value": 150, "suffix": "+", "label": "Projects delivered" },
+    { "value": 98, "suffix": "%", "label": "Client satisfaction" },
+    { "value": 0, "suffix": "", "label": "Lock-in contracts" }
+  ],
+
+  "roster": ["Northwind", "Lumen", "Atlas/Co", "Novahaus", "Parallax", "Vertex", "Obsidian", "Halo Labs", "Strata", "Aurora", "Kinetic", "Meridian"],
+
+  "whoWeAre": {
+    "statement": "Wixnova is a **full-stack digital solutions agency** helping startups, established brands, and scaling companies build digital experiences that improve visibility and deliver **measurable results.**",
+    "pillars": [
+      { "title": "Performance-first", "desc": "Every project engineered for long-term, compounding growth through technical excellence." },
+      { "title": "Full-stack team", "desc": "Zero vendor juggling. Design, dev, and marketing under one roof." },
+      { "title": "Transparent results", "desc": "No vanity metrics. Clear KPI reporting focused on real impact." },
+      { "title": "Intelligence built in", "desc": "Automation and AEO built into every growth strategy we execute for modern efficiency." }
+    ]
+  },
+
+  "services": [
+    { "id": "ui-ux-design", "name": "UI/UX Design", "cat": "Design", "icon": "pen", "pill": "Research, flows and high-fidelity UI for web, mobile and apps.", "bullets": ["User research, journey mapping, and behavioral analysis", "Wireframes, user flows, and interactive prototypes", "High-fidelity UI design for web, mobile, and application interfaces", "Responsive design systems optimized across all devices"] },
+    { "id": "web-development", "name": "Web Development", "cat": "Development", "icon": "code", "pill": "Custom builds that load fast, convert better, and scale without limits.", "bullets": ["Custom WordPress development with full CMS capability", "E-commerce platforms built on Shopify, WooCommerce, or custom solutions", "Responsive, cross-device development to modern performance standards", "Third-party integrations: CRMs, payment gateways, APIs, and marketing tools"] },
+    { "id": "motion-design", "name": "Animation & Motion", "cat": "Creative", "icon": "play", "pill": "Explainers, branded motion graphics, 2D/3D visuals and reels.", "bullets": ["Explainer videos and product demonstration animations", "Branded motion graphics and logo animations", "2D and 3D animated visuals for campaigns and product launches", "Social media reels, short-form content, and promotional videos"] },
+    { "id": "graphic-design", "name": "Graphic Design", "cat": "Design", "icon": "layers", "pill": "Ads, print, collateral and packaging that look the part.", "bullets": ["Social media graphics, advertising creatives, and campaign visuals", "Brochures, flyers, banners, and print-ready marketing materials", "Business cards, presentations, and branded corporate collateral", "Packaging design and product visual identity assets"] },
+    { "id": "social-media-design", "name": "Social Media Design", "cat": "Social", "icon": "chat", "pill": "Post templates, carousels and content kits for every platform.", "bullets": ["Platform-specific post templates, story designs, and carousel layouts", "Branded content kits and social media identity systems", "Campaign visuals, promotional creatives, and product launch assets", "Reels cover graphics and short-form content design"] },
+    { "id": "branding", "name": "Branding", "cat": "Brand", "icon": "star", "pill": "Logo, visual identity, voice and strategy that make you unforgettable.", "bullets": ["Brand strategy, positioning, and competitive differentiation", "Logo design across full-use cases and variations", "Typography systems, color palettes, and visual language", "Comprehensive brand guidelines and usage documentation"] },
+    { "id": "digital-marketing", "name": "Digital Marketing", "cat": "Marketing", "icon": "trend", "pill": "Multi-channel strategy, funnels, automation and CRO.", "bullets": ["Custom digital marketing strategy and multi-channel campaign architecture", "Lead generation systems and customer acquisition funnel development", "Email marketing, automation workflows, and lifecycle campaign design", "Conversion rate optimization (CRO) and landing page performance tuning"] },
+    { "id": "social-media-campaign", "name": "Social Media Campaign", "cat": "Social", "icon": "users", "pill": "Strategy, content, targeting and community — end to end.", "bullets": ["Campaign strategy aligned with business goals and audience behavior", "Content planning, creative production, and platform-specific scheduling", "Audience targeting, retargeting, and growth strategy", "Community management and engagement optimization"] },
+    { "id": "seo-aeo", "name": "SEO & AEO", "cat": "SEO / AEO", "icon": "search", "pill": "Technical SEO, intent research and answer-engine optimisation.", "bullets": ["Full technical SEO audits and priority-ranked optimization roadmaps", "Keyword research based on real user intent and competitive analysis", "On-page optimization: content, metadata, headings, and structured data", "Site architecture, internal linking, and crawl efficiency improvements"] },
+    { "id": "meta-lead-generation", "name": "Meta Lead Generation", "cat": "Paid", "icon": "target", "pill": "Audiences, creatives and lead forms tuned for qualified leads.", "bullets": ["Audience research, custom targeting, and lookalike audience development", "Ad creative strategy, copywriting, and iterative creative testing", "Lead form architecture optimized for completion rate and qualification", "CRM integration, follow-up automation, and lead nurturing setup"] },
+    { "id": "ad-campaign-management", "name": "Ad Campaign Management", "cat": "Paid", "icon": "coin", "pill": "Google, Meta, LinkedIn and YouTube ads — precision-aligned to revenue.", "bullets": ["Multi-platform paid advertising strategy and campaign architecture", "Google Search, Display, Shopping, and Performance Max campaigns", "Facebook, Instagram, LinkedIn, and YouTube advertising management", "Audience targeting, segmentation, and behavioral optimization"] },
+    { "id": "full-growth-package", "name": "Full Growth Package", "cat": "★ Best value", "icon": "rocket", "pill": "Brand, website, marketing and content — the complete growth engine.", "bullets": ["Full brand strategy, identity development, and ongoing brand management", "Website design, development, and continuous performance optimization", "Complete digital marketing: SEO, paid media, email, and social campaigns", "Content production: motion, graphic design, and social media systems"] },
+    { "id": "dedicated-team", "name": "24/7 Dedicated Team Members", "cat": "Support", "icon": "clock", "pill": "Round-the-clock specialists on your account — no ticket queues.", "bullets": ["Round-the-clock coverage across every time zone", "Dedicated specialists assigned to your account full-time", "Direct ClickUp, Discord, WhatsApp & Telegram access — no ticket queues", "Real humans on standby for urgent fixes and launches"] },
+    { "id": "project-team", "name": "Appoint Dedicated Team Per Project", "cat": "New clients", "icon": "shield", "pill": "Hand-pick the exact specialists for your project.", "bullets": ["Hand-pick the exact specialists for your project", "Designers, developers & strategists exclusive to you", "Onboarding in under 48 hours — no agency lag", "Scale the team up or down as your scope evolves"] }
+  ],
+
+  "featuredServices": ["ui-ux-design", "web-development", "branding", "motion-design", "seo-aeo", "ad-campaign-management"],
+
+  "comparison": {
+    "cols": ["Wixnova", "In-house team", "Freelancers", "Traditional agency"],
+    "rows": [
+      ["All services under one roof", "check", "Rarely", "x", "Sometimes"],
+      ["Predictable monthly cost", "check", "x", "x", "Varies"],
+      ["No long-term contracts", "check", "x", "check", "x"],
+      ["Onboard in 48 hours", "check", "x", "Maybe", "x"],
+      ["Dedicated account manager", "check", "check", "x", "Sometimes"],
+      ["AI & AEO capabilities", "check", "Rarely", "Rarely", "Rarely"],
+      ["Unlimited design scope", "check", "Limited", "x", "x"],
+      ["Transparent KPI reporting", "check", "Varies", "x", "Sometimes"],
+      ["Scales with your business", "check", "x", "Partially", "Partially"],
+      ["Cost-effective vs. output", "check", "x", "Varies", "x"],
+      ["Pause or upgrade anytime", "check", "x", "check", "x"],
+      ["Priority support included", "check", "check", "x", "Extra cost"]
+    ]
+  },
+
+  "process": [
+    { "when": "Day 0", "title": "Choose your plan", "lead": "Pick the tier that fits your stage.", "desc": "We map your goals against the right scope — no pressure, no hard sell.", "items": ["30-min fit call", "Tailored plan recommendation", "Transparent flat pricing"] },
+    { "when": "Within 48h", "title": "Onboard & align", "lead": "Your account lead audits where you are today.", "desc": "We document accesses, brand, voice and current funnel — then lock 30/60/90-day targets so every sprint compounds.", "items": ["Brand & analytics audit", "Shared Notion workspace", "30/60/90 roadmap"] },
+    { "when": "Week 1+", "title": "We become your team", "lead": "Design, build, market and optimise — every week.", "desc": "One Slack channel. One project tracker. Senior operators only — no juniors, no agency handoffs, no vendor circus.", "items": ["Daily async updates", "Linear ticket pipeline", "Direct senior contact"] },
+    { "when": "Every Friday", "title": "Review transparent results", "lead": "Real metrics, not vanity charts.", "desc": "A live dashboard plus a 5-minute weekly Loom from your lead — what shipped, what moved, what's next.", "items": ["Live KPI dashboard", "Weekly Loom recap", "Monthly strategy review"] },
+    { "when": "Anytime", "title": "Scale on your terms", "lead": "Dial scope up or down as the business evolves.", "desc": "Pause, upgrade or sunset with 14 days' notice. The infrastructure stays yours — every file, every dashboard, every doc.", "items": ["Month-to-month flexibility", "Full asset ownership", "No lock-in contracts"] }
+  ],
+
+  "principles": [
+    { "title": "Flexibility & client-centered approach", "items": ["Dedicated brand lead for every engagement", "Flexible scope — pause or scale weekly", "Direct Slack with senior designers"] },
+    { "title": "Speed & quality control", "items": ["First draft in 48 hours", "Unlimited revisions until pixel-perfect", "QA by an art director on every shipment"] },
+    { "title": "Organization & full control", "items": ["Single dashboard for every brief & file", "Complete ownership of all source files", "Documentation & component libraries included"] }
+  ],
+
+  "stack": ["Figma", "Framer", "Webflow", "WordPress", "Shopify", "React", "Next.js", "TypeScript", "Tailwind", "Node.js", "Supabase", "Vercel", "Google Ads", "Meta", "HubSpot", "Notion", "Slack", "After Effects"],
+
+  "industries": ["SaaS", "E-commerce", "Real estate", "Healthcare", "Education", "Fitness", "Legal", "Finance", "B2B services", "Growth-stage startups"],
+
+  "rating": { "score": "4.9", "count": "150+ reviews" },
+  "reviews": [
+    { "quote": "Wixnova completely transformed our online presence. Within 3 months of working with them, our organic traffic tripled and we were closing deals from inbound leads for the first time. The team is incredibly responsive and actually cares about results.", "name": "James Mitchell", "role": "CEO, RetailFlow", "service": "SEO & Web Dev" },
+    { "quote": "We were spending a fortune on Meta ads with terrible results. Wixnova restructured everything — from targeting to creatives to landing pages. Our cost per lead dropped by 62% and the quality of leads went through the roof.", "name": "Sarah Rahman", "role": "Director, NexaRealty", "service": "Meta Lead Gen" },
+    { "quote": "The branding work Wixnova delivered was beyond what I imagined was possible at this price point. Our new identity is sharp, consistent, and immediately elevated how prospects perceive us.", "name": "Daniel Kim", "role": "Founder, FitForge", "service": "Branding" },
+    { "quote": "Switching to Wixnova's Growth plan was the best business decision of this year. Having design, development, SEO, and ads all in one team — with one contact point — has eliminated so much stress.", "name": "Priya Lowe", "role": "CMO, TechSprint", "service": "Growth Plan" },
+    { "quote": "I was sceptical about agencies after being burned before. But Wixnova was different from day one — transparent about what they'd do, when, and what results to expect. Our social following grew by over 12,000 in 45 days.", "name": "Marco Torres", "role": "Owner, TasteHub", "service": "Social Campaign" },
+    { "quote": "The UI/UX redesign Wixnova did for our SaaS product was transformational. Bounce rate dropped by 38%, time on site doubled, and trial signups increased by over 200%.", "name": "Aisha Hassan", "role": "Product Lead, CloudBase", "service": "UI/UX Design" }
+  ],
+  "videoQuotes": [
+    { "quote": "Wixnova rebuilt our funnel in 6 weeks. Trial signups doubled.", "name": "Priya Shah", "role": "Founder · Northwind SaaS", "len": "0:42" },
+    { "quote": "Best agency partnership we've had. Ship velocity is unreal.", "name": "Marcus Lee", "role": "Head of Growth · Lumen Labs", "len": "1:08" },
+    { "quote": "Brand feels premium now. CAC dropped 31% in one quarter.", "name": "Elena Rivera", "role": "CMO · Aster Health", "len": "0:55" },
+    { "quote": "They treat our roadmap like their own. Rare and valuable.", "name": "David Okafor", "role": "CEO · Relay Logistics", "len": "0:38" },
+    { "quote": "Design system + dev handoff was flawless. Zero friction.", "name": "Sara Lindqvist", "role": "Product Lead · Mosaic Studio", "len": "1:21" },
+    { "quote": "Investor-grade site in a month. Closed our seed days later.", "name": "Jordan Patel", "role": "Co-founder · Halo Fintech", "len": "0:49" }
+  ],
+
+  "results": [
+    { "client": "RetailFlow", "service": "SEO & Web Dev", "cats": ["web", "marketing"], "metric": "3× organic traffic", "headline": "Organic traffic tripled within 3 months", "person": "James Mitchell, CEO", "reviewIndex": 0 },
+    { "client": "NexaRealty", "service": "Meta Lead Gen", "cats": ["marketing"], "metric": "−62% cost per lead", "headline": "Meta ads rebuilt from targeting to landing pages", "person": "Sarah Rahman, Director", "reviewIndex": 1 },
+    { "client": "FitForge", "service": "Branding", "cats": ["branding"], "metric": "New identity", "headline": "A sharp, consistent identity that elevated perception", "person": "Daniel Kim, Founder", "reviewIndex": 2 },
+    { "client": "TechSprint", "service": "Growth Plan", "cats": ["growth"], "metric": "One team", "headline": "Design, dev, SEO and ads under one contact point", "person": "Priya Lowe, CMO", "reviewIndex": 3 },
+    { "client": "TasteHub", "service": "Social Campaign", "cats": ["marketing"], "metric": "+12,000 followers", "headline": "12,000+ new followers in 45 days", "person": "Marco Torres, Owner", "reviewIndex": 4 },
+    { "client": "CloudBase", "service": "UI/UX Design", "cats": ["web"], "metric": "+200% trial signups", "headline": "Bounce −38%, time on site doubled", "person": "Aisha Hassan, Product Lead", "reviewIndex": 5 },
+    { "client": "Northwind SaaS", "service": "Funnel rebuild", "cats": ["web", "growth"], "metric": "2× trial signups", "headline": "Funnel rebuilt in 6 weeks", "person": "Priya Shah, Founder", "videoIndex": 0 },
+    { "client": "Aster Health", "service": "Branding", "cats": ["branding"], "metric": "−31% CAC", "headline": "A premium brand — CAC down 31% in one quarter", "person": "Elena Rivera, CMO", "videoIndex": 2 },
+    { "client": "Halo Fintech", "service": "Website", "cats": ["web"], "metric": "Seed closed", "headline": "Investor-grade site in a month", "person": "Jordan Patel, Co-founder", "videoIndex": 5 }
+  ],
+  "resultFilters": [
+    { "id": "all", "label": "All" }, { "id": "web", "label": "Web & UI/UX" }, { "id": "branding", "label": "Branding" },
+    { "id": "marketing", "label": "Marketing & ads" }, { "id": "growth", "label": "Growth plan" }
+  ],
+
+  "team": [
+    { "name": "Sarwar Kamal", "role": "Founder & Owner", "bio": "The visionary behind Wixnova. Built this agency from the ground up on one belief — every business deserves a digital presence that actually drives growth.", "email": "sarwar@wixnova.com" },
+    { "name": "Abdullah Al Mamun", "role": "Chief Executive Officer | Co-Founder", "bio": "Drives the operational engine of Wixnova. Bridges the gap between client goals and team execution, turning ambitious plans into measurable outcomes.", "email": "mamun@wixnova.com", "linkedin": "https://www.linkedin.com/in/itsreallyabdullah/" },
+    { "name": "Swapan", "role": "Managing Director | Co-Founder", "bio": "The operational backbone of Wixnova's day-to-day. Oversees project delivery so every campaign, build, and creative output crosses the finish line above expectation." }
+  ],
+
+  "pricing": {
+    "subscriptions": [
+      { "name": "Essentials", "label": "Design subscription", "price": "$2,495", "per": "per month", "desc": "A senior designer on tap for branding, UI/UX and everyday creative — shipped one ticket at a time.", "features": ["UI/UX Design", "Graphic Design", "Social Media Design", "Branding & Identity", "Motion Design (light)", "1 active request at a time", "48-hour turnaround", "Unlimited revisions"], "bestFor": "Founders & solo marketers needing on-demand design.", "cta": "Start Essentials" },
+      { "name": "Growth", "label": "Design + Build + Marketing", "price": "$4,995", "per": "per month", "featured": true, "desc": "Design, development and performance marketing under one roof. Replace three agencies with one senior team.", "features": ["Everything in Essentials", "Web Development & CMS builds", "SEO & AEO optimisation", "Meta Lead Generation", "Ad Campaign Management", "Digital Marketing strategy", "2 active requests at a time", "24-hour turnaround on priority tickets"], "bestFor": "Scale-ups shipping product & campaigns weekly.", "cta": "Start Growth" },
+      { "name": "Full Growth Package", "label": "★ Best value", "price": "Custom", "per": "tailored to your scope", "desc": "Every Wixnova capability, your dedicated cross-functional team, weekly strategy reviews and custom AI workflows.", "features": ["All 14 Wixnova services", "Dedicated account manager", "Designers, developers, marketers & strategists", "Custom AI automation & workflows", "Weekly reporting & strategy reviews", "24/7 Dedicated Team coverage", "Priority Slack, ClickUp & WhatsApp", "Onboarding in under 48 hours"], "bestFor": "Funded teams replacing an entire in-house stack.", "cta": "Talk to Founder" }
+    ],
+    "projects": [
+      { "name": "Brand Identity Sprint", "price": "$3,500", "time": "2–3 weeks", "desc": "A complete visual identity — logo system, palette, typography and brand guidelines — delivered as a press-ready kit.", "features": ["Logo system (primary, secondary, mark)", "Color palette & typography scale", "Brand guidelines PDF (30+ pages)", "Social media kit & business cards", "Source files (Figma + AI)", "2 rounds of revisions"], "bestFor": "Founders launching or rebranding a venture." },
+      { "name": "Website Launch", "price": "$7,500", "time": "4–6 weeks", "desc": "A fully-designed, developed and launched marketing site — built on a modern CMS, SEO-ready from day one.", "features": ["Up to 8 custom-designed pages", "Responsive build (Webflow / Framer / Next.js)", "CMS setup & content migration", "Technical SEO foundations", "Analytics & tracking install", "30 days of post-launch support"], "bestFor": "Teams replacing an outdated site or launching a new product." },
+      { "name": "Launch Campaign", "price": "$4,500", "time": "3–4 weeks", "desc": "A go-to-market campaign — creative, landing page, ad funnels and the first thirty days of paid media managed end-to-end.", "features": ["Campaign strategy & messaging", "Landing page design & build", "10+ ad creatives (static + motion)", "Meta & Google ad funnel setup", "30 days of campaign management", "Performance report & handoff"], "bestFor": "Product launches, events and seasonal pushes." },
+      { "name": "AI Workflow Build", "price": "From $6,000", "time": "3–5 weeks", "desc": "A custom automation that removes a recurring bottleneck — scoped, built, integrated into your stack and documented.", "features": ["Discovery & workflow mapping", "Custom automation (n8n / Make / code)", "Integration with your tools & CRM", "Internal docs & loom walkthrough", "Team training session", "30 days of tuning & support"], "bestFor": "Ops, marketing and sales teams drowning in manual work." }
+    ]
+  },
+
+  "faq": {
+    "general": [
+      { "q": "Is there a minimum contract length?", "a": "No. Every plan is month-to-month with no lock-in and no cancellation penalties. Upgrade, pause, or cancel any time. We earn your business every month through results." },
+      { "q": "How quickly can you actually get started?", "a": "Once you select a plan we kick off onboarding within 48 hours: dedicated point of contact assigned, current digital state audited, and a 30/60/90-day roadmap delivered. Active work begins in the same week." },
+      { "q": "What makes Wixnova different from other agencies?", "a": "Three things: scope, accountability, and speed. Most agencies specialize in one area and outsource the rest. Wixnova handles everything in-house — design, development, SEO, paid ads, content, and automation — under one subscription with a single point of contact." },
+      { "q": "What if I'm not happy with the work?", "a": "Unlimited revisions within scope until you're satisfied — no arguments, no extra charges. Our 98% client satisfaction rate and month-to-month model means we're always incentivized to do great work, not adequate work." },
+      { "q": "Do I need to provide content and copy?", "a": "No. On Growth plans and above, our team handles copywriting, content creation, and creative production. We onboard deeply on your brand voice and goals — then we create everything. You review and approve." },
+      { "q": "Can I upgrade, downgrade, or pause my plan?", "a": "Yes to all three. Upgrades take effect immediately. Downgrades and pauses apply from your next billing date — just give us notice." },
+      { "q": "Do you own the work or do I?", "a": "You own 100% of the final deliverables — source files, design files, code, accounts, and assets — once they're delivered and the invoicing period is paid in full." },
+      { "q": "Do you use AI in your workflow?", "a": "Yes — for research, draft acceleration, motion exploration, and analytics. Final craft is always human-led by senior designers, writers, and engineers. We never ship raw generated output." }
+    ],
+    "services": [
+      { "q": "What services are included in a subscription?", "a": "Depending on the plan: UI/UX design, brand identity, web design, web and app development, motion and illustration, SEO, paid ads (Meta, Google), content production, email and CRM automation, and analytics dashboards." },
+      { "q": "Which tech stacks do you build on?", "a": "Web: React, Next.js, TanStack Start, Astro, Webflow, and Shopify. Mobile: React Native and Flutter. Backend: Supabase, Node, and serverless on Cloudflare or Vercel. We pick the stack to fit your team — not the other way around." },
+      { "q": "Can you take over an existing website, brand, or codebase?", "a": "Absolutely. We audit what's already shipped, document the gaps, and pick up from where the last team left off — no rebuild unless it's the right call." },
+      { "q": "Do you offer SEO and paid media as standalone work?", "a": "Yes. SEO audits, technical SEO, content programs, and paid media (Meta, Google, LinkedIn, TikTok) can be bought as one-time engagements or rolled into a Growth subscription." },
+      { "q": "Do you handle ongoing maintenance after launch?", "a": "Yes. Subscribers get continuous iteration, A/B testing, content updates, performance fixes, and analytics — not just a one-shot delivery." }
+    ],
+    "contact": [
+      { "q": "How fast do you ship the first draft?", "a": "First drafts on most design tickets land within 48 hours of brief approval. Larger builds (full sites, app flows, brand systems) move through clear milestones inside a 2–6 week window depending on plan." },
+      { "q": "Do you sign NDAs?", "a": "Yes. We sign a mutual NDA before any sensitive material is shared, and every team member is under a standing confidentiality agreement." },
+      { "q": "Where is your team based?", "a": "Wixnova is a remote-first studio with senior designers, developers, marketers, and strategists working across multiple time zones. We overlap working hours with clients in North America, the UK, EU, and APAC." },
+      { "q": "Can I talk to a real person before signing up?", "a": "Of course. Book a free 15-minute strategy call and you'll talk directly to a senior member of the Wixnova team — no SDR scripts, no pitch deck." }
+    ]
+  },
+
+  "contact": {
+    "expect": ["Free 30-min strategy session", "Custom growth roadmap for your business", "Clear plan recommendation — zero hard sell", "Response within 24 hours guaranteed"]
+  },
+
+  "about": {
+    "headline": ["We don't just build", "digital — we build growth."],
+    "intro": "Wixnova is a full-service digital growth partner. Brand, design, development, marketing and automation — one coordinated ecosystem instead of fragmented vendors. Built for serious operators who treat digital as a system, not a side project.",
+    "stats": [
+      { "value": 120, "suffix": "+", "label": "Projects completed" },
+      { "value": 40, "suffix": "+", "label": "Active clients" },
+      { "value": 12, "suffix": "+", "label": "Countries served" },
+      { "value": 94, "suffix": "%", "label": "Client retention" }
+    ],
+    "founderQuote": "If our clients grow, **we grow.** That is not a tagline — it is the **operating system** of everything we do at Wixnova.",
+    "story": ["Wixnova was founded on a simple observation: most businesses engaging digital agencies end up managing fragments — a designer here, a developer there, a marketer somewhere else. The result is misaligned strategy, inconsistent execution and growth that never reaches its full potential.", "We built Wixnova to solve that problem entirely. By combining branding, design, development, marketing and automation under one coordinated ecosystem, we give businesses a single growth partner with full accountability across every digital function.", "Every service we deliver is designed to create compounding value. The brand we build strengthens the website we develop. The website powers the campaigns we run. The campaigns feed back into the systems we optimise. Nothing operates in isolation."],
+    "whoWeAre": [
+      { "title": "What we do", "desc": "End-to-end services across Design & Brand, Web Technology, Content & Motion, and Digital Marketing. Engage individual disciplines or the complete Full Growth Package." },
+      { "title": "Why we exist", "desc": "To eliminate the coordination gap that kills digital performance. We close that gap by operating as one team with one shared growth mandate." },
+      { "title": "Who we serve", "desc": "E-commerce brands, B2B service companies, SaaS businesses and growth-stage operators across the USA, UK, Canada and Australia." }
+    ],
+    "mission": "To help businesses grow through integrated strategy, superior design and performance-driven execution — delivered as one seamless partnership.",
+    "vision": "To become the most trusted full-service growth partner for scaling businesses across international markets — known for results, reliability and relentless execution.",
+    "values": [
+      { "title": "Growth first", "desc": "Every decision answers one question: does this create growth for our client?" },
+      { "title": "System thinking", "desc": "We build connected systems, not isolated deliverables. Every service compounds on the next." },
+      { "title": "Execution quality", "desc": "Strategy without execution is fiction. We are relentless about quality at every stage." },
+      { "title": "Long-term partnership", "desc": "We are not a transactional vendor. We invest in every client relationship over time." },
+      { "title": "Radical clarity", "desc": "Clear communication, transparent reporting and honest strategy at every stage of the engagement." },
+      { "title": "Global standard", "desc": "We hold our work to an international standard regardless of project size or geography." }
+    ]
+  },
+
+  "careers": {
+    "headline": ["Build work you'll", "brag about for years."],
+    "intro": "We're a small studio of designers, engineers, and storytellers shipping uncommonly good digital products. No layers, no theater — just craft, kindness, and momentum.",
+    "stats": [
+      { "value": 32, "suffix": "", "label": "Teammates worldwide" },
+      { "value": 9, "suffix": "", "label": "Time zones" },
+      { "value": 120, "suffix": "+", "label": "Brands shipped" },
+      { "text": "4.9★", "label": "Glassdoor rating" }
+    ],
+    "beliefs": [
+      { "title": "Taste over trend", "desc": "We chase craft, not algorithms. Every pixel, transition, and line of copy earns its place." },
+      { "title": "Care, loudly", "desc": "We care about each other, about the work, and about the people who'll use what we build." },
+      { "title": "Ship, then sharpen", "desc": "Momentum beats perfection. We ship the smallest brilliant thing, then keep refining it." },
+      { "title": "Quietly ambitious", "desc": "No big egos, just big standards. We let the work speak for the studio." }
+    ],
+    "perks": [
+      { "icon": "globe", "title": "Remote first", "desc": "Work from anywhere. Quarterly offsites in places worth flying for." },
+      { "icon": "coin", "title": "Honest pay", "desc": "Transparent bands, equity in the studio, profit share at year-end." },
+      { "icon": "heart", "title": "Full health cover", "desc": "Medical, dental, mental health, and an annual wellness stipend." },
+      { "icon": "book", "title": "Learn budget", "desc": "$2.5k a year for courses, conferences, books, or that fancy course." },
+      { "icon": "clock", "title": "Real time off", "desc": "Unlimited PTO with a 25-day minimum. We actually mean it." },
+      { "icon": "laptop", "title": "Home-office stipend", "desc": "Desk, chair, display, the works. Replaceable every 3 years." }
+    ],
+    "hiring": [
+      { "title": "Intro chat", "desc": "A 30-min conversation with the founding team. Mutual curiosity, no trick questions." },
+      { "title": "Craft review", "desc": "We walk through your portfolio or a small paid exercise. Real work, no whiteboards." },
+      { "title": "Team hang", "desc": "Meet 3–4 future teammates over a relaxed call. Ask us anything." },
+      { "title": "Offer & onboard", "desc": "Decision within a week. A 30-day onboarding plan with a buddy." }
+    ]
+  }
+}

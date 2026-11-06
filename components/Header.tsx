@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
+import gsap from 'gsap';
 import { NAV, SITE } from '@/lib/content';
 import { Logo, TalkButton } from './ui';
 
@@ -34,8 +35,14 @@ export default function Header() {
   // Lock scroll, move focus, Esc + focus trap while open
   useEffect(() => {
     document.body.classList.toggle('menu-open', open);
-    if (!open) return;
+    const lenis = (window as unknown as { __lenis?: { stop(): void; start(): void } }).__lenis;
+    if (!open) { lenis?.start(); return; }
+    lenis?.stop();
     closeBtnRef.current?.focus();
+    if (menuRef.current && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      gsap.fromTo(menuRef.current.querySelectorAll('[data-menu-link]'), { yPercent: 110, rotate: 4 }, { yPercent: 0, rotate: 0, duration: 0.9, ease: 'power4.out', stagger: 0.05, delay: 0.1 });
+      gsap.fromTo(menuRef.current.querySelectorAll('[data-menu-side] > *'), { y: 30, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.7, ease: 'power3.out', stagger: 0.06, delay: 0.3 });
+    }
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') { setOpen(false); openBtnRef.current?.focus(); }
       if (e.key === 'Tab' && menuRef.current) {
@@ -51,13 +58,14 @@ export default function Header() {
 
   return (
     <>
+      <div className="pointer-events-none fixed inset-x-0 top-0 z-[70] h-1 origin-left scale-x-0 bg-lime-700" data-progress="" aria-hidden="true" />
       <header id="site-header" className={`fixed inset-x-0 top-0 z-50 ${hidden && !open ? 'is-hidden' : ''}`}>
         <div className="flex items-center justify-between gap-4 px-4 py-4 md:px-6">
           <nav className="flex flex-1 items-center gap-2" aria-label="Primary">
-            <Link href="/portfolio" className="pill hidden md:inline-flex" aria-current={isCurrent('/portfolio') ? 'page' : undefined}>Work</Link>
             <Link href="/services" className="pill hidden md:inline-flex" aria-current={isCurrent('/services') ? 'page' : undefined}>Services</Link>
-            <Link href="/about" className="pill hidden lg:inline-flex" aria-current={isCurrent('/about') ? 'page' : undefined}>About us</Link>
-            <button ref={openBtnRef} type="button" className="pill" onClick={() => setOpen(true)} aria-controls="site-menu" aria-expanded={open}>
+            <Link href="/work" className="pill hidden md:inline-flex" aria-current={isCurrent('/work') ? 'page' : undefined}>Results</Link>
+            <Link href="/pricing" className="pill hidden lg:inline-flex" aria-current={isCurrent('/pricing') ? 'page' : undefined}>Pricing</Link>
+            <button ref={openBtnRef} type="button" className="pill" onClick={() => setOpen(true)} aria-controls="site-menu" aria-expanded={open} data-menu-open="">
               <span className="flex flex-col gap-[5px]" aria-hidden="true">
                 <i className="block h-0.5 w-4 rounded bg-current" /><i className="block h-0.5 w-3 rounded bg-current" />
               </span>
@@ -66,7 +74,7 @@ export default function Header() {
           </nav>
           <Link href="/" className="shrink-0 text-ink transition hover:text-lime-700" aria-label="Wixnova home"><Logo /></Link>
           <div className="flex flex-1 items-center justify-end gap-5">
-            <p className="hidden text-right text-sm font-medium leading-tight xl:block">Booking projects<br /><span className="text-ink-3">for this month</span></p>
+            <p className="hidden text-right text-sm font-medium leading-tight xl:block">Onboarding<br /><span className="text-ink-3">in 48 hours</span></p>
             <span className="hidden sm:inline-flex"><TalkButton /></span>
           </div>
         </div>
@@ -86,9 +94,9 @@ export default function Header() {
         <div className="squiggle-bg absolute inset-0 bg-ink" />
         <div className="relative flex h-full flex-col overflow-y-auto px-4 py-4 md:px-6">
           <div className="flex items-center justify-between">
-            <button ref={closeBtnRef} type="button" className="pill" onClick={() => { setOpen(false); openBtnRef.current?.focus(); }}>✕ Close</button>
+            <button ref={closeBtnRef} type="button" className="pill" onClick={() => { setOpen(false); openBtnRef.current?.focus(); }} data-menu-close="">✕ Close</button>
             <Link href="/" className="text-lime" aria-label="Wixnova home"><Logo /></Link>
-            <span className="hidden sm:inline-flex"><TalkButton variant="lime" /></span>
+              <span className="hidden sm:inline-flex"><TalkButton variant="lime" /></span>
           </div>
           <div className="container mt-12 grid flex-1 gap-12 pb-10 lg:grid-cols-12 lg:items-end">
             <ul className="space-y-1 lg:col-span-7">
@@ -98,6 +106,7 @@ export default function Header() {
                     href={item.href}
                     onClick={() => setOpen(false)}
                     aria-current={isCurrent(item.href) ? 'page' : undefined}
+                    data-menu-link=""
                     className={`cond flex items-baseline gap-4 text-[clamp(2.6rem,7vw,5.5rem)] leading-[0.95] transition hover:text-lime ${isCurrent(item.href) ? 'text-lime' : 'text-paper-white'}`}
                   >
                     <span className="font-sans text-sm text-lime">0{i + 1}</span>{item.label}
@@ -105,13 +114,13 @@ export default function Header() {
                 </li>
               ))}
             </ul>
-            <div className="space-y-8 text-paper-white lg:col-span-5">
-              <p className="font-display text-3xl font-bold leading-tight md:text-4xl">Got a project?<br /><span className="text-lime">Let&apos;s make it make money.</span></p>
-              <div><p className="text-sm text-ink-4">New projects</p><a href={`mailto:${SITE.email}`} className="text-xl font-medium hover:text-lime">{SITE.email}</a></div>
-              <div><p className="text-sm text-ink-4">Join the crew</p><Link href="/careers" className="text-xl font-medium hover:text-lime">{SITE.careersEmail}</Link></div>
+            <div className="space-y-8 text-paper-white lg:col-span-5" data-menu-side="">
+              <p className="font-display text-3xl font-bold leading-tight md:text-4xl">Your growth starts<br /><span className="text-lime">now. Not later.</span></p>
+              <div><p className="text-sm text-ink-4">Email us</p><a href={`mailto:${SITE.email}`} className="text-xl font-medium hover:text-lime">{SITE.email}</a></div>
+              <div><p className="text-sm text-ink-4">Discovery call</p><Link href="/contact" className="text-xl font-medium hover:text-lime">Book a free, no-obligation call →</Link></div>
               <div className="flex flex-wrap gap-2">
-                {SITE.socials.slice(0, 3).map((s) => (
-                  <a key={s.label} href={s.href} className="pill !bg-paper-white/10 !text-paper-white hover:!bg-lime hover:!text-ink">{s.label} ↗</a>
+                {SITE.socials.map((s) => (
+                  <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" className="pill !bg-paper-white/10 !text-paper-white hover:!bg-lime hover:!text-ink">{s.label} ↗</a>
                 ))}
               </div>
             </div>

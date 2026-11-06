@@ -1,61 +1,53 @@
 # Wixnova — Next.js site
 
-Next.js 15 (App Router) · React 19 · TypeScript · Tailwind CSS 3 — the v3 "playful editorial" design
-(two26-inspired concept in Wixnova logo lime), converted from the static HTML version.
+Next.js 15 (App Router) · React 19 · TypeScript · Tailwind CSS 3 · **GSAP 3 (ScrollTrigger + SplitText)** · **Lenis smooth scroll**
+
+Playful-editorial design (two26-inspired concept) in the Wixnova logo lime, filled with the real content from wixnova.com.
 
 ## Run it
 Requires **Node.js 18.18+** (20 or 22 recommended).
-
 ```bash
 npm install
 npm run dev        # http://localhost:3000
+npm run build && npm start   # production
 ```
+Static hosting (cPanel etc.): uncomment `output: 'export'` in `next.config.mjs`, run `npm run build`, upload `out/`.
+Vercel: import the repo — no config needed.
 
-Production:
-```bash
-npm run build
-npm start          # serves the production build on :3000
-```
+## Pages
+`/` home · `/services` (all 14 services) · `/work` (client results & reviews) · `/pricing` (plans + one-time projects) ·
+`/about` · `/careers` · `/contact`
 
-Static hosting (cPanel, any host without Node): uncomment `output: 'export'` in `next.config.mjs`,
-run `npm run build`, then upload the generated `out/` folder.
-Deploy to Vercel: push to GitHub and import the repo — no config needed.
+## Content
+All copy lives in **`lib/data.json`** (taken from wixnova.com: services, pricing, process, comparison table, reviews,
+video testimonials, leadership, FAQs, about, careers). `lib/content.ts` exposes it with types. Edit the JSON — pages update.
+Wrap words in `**double asterisks**` inside statements to make them fill in lime-green.
 
-## Structure
-```
-app/
-  layout.tsx            fonts (next/font/local), header, footer, metadata
-  globals.css           design-system classes (.cond .sticker .pill .btn-talk .chip .card .shot .chat …)
-  page.tsx              Home
-  about/ services/ portfolio/ blog/ contact/ careers/   → one page.tsx each
-  not-found.tsx         404
-  fonts/                Anton, Funnel Display, Funnel Sans (OFL, Latin subset)
-  icon.svg              favicon
-components/
-  Header.tsx            sticky header (hides on scroll) + fullscreen menu      (client)
-  Footer.tsx            lime CTA footer + giant wordmark
-  Newsletter.tsx        footer signup                                         (client)
-  ContactForm.tsx       validation, ?service= preselect, POST to endpoint     (client)
-  interactive.tsx       Filterable grid, TestimonialStack, ChatFaq, Pricing, CaseStudies dialog (client)
-  effects.tsx           ScrollEffects (reveal/pop), WordFill, DrawPath, CountUp (client)
-  sections.tsx          reusable sections: Marquee, ServicesPath, Process, Testimonials, Industries, PricingSection, FaqSection
-  ui.tsx                Logo, TalkButton, Sticker, Shot, SectionHead, PageHero, Avatar
-  Icon.tsx              icon set
-lib/
-  content.ts            ALL copy & data (services, projects, reviews, pricing, FAQ, team, jobs, posts…)
-  logo.ts               Wixnova wordmark SVG path
-tailwind.config.ts      tokens: lime #B5E96B, ink #10140C, paper #F3F4EC, fonts, type scale
-```
+## Motion system
+- `components/Motion.tsx` — mounted once in the layout. Starts Lenis and (re)initialises animations on every route change.
+- `lib/animations.ts` — the GSAP engine. Add a data-attribute to any element to animate it:
 
-## Editing content
-Almost everything lives in `lib/content.ts`. Items marked **SAMPLE** (projects & results, testimonials, team,
-milestones, pricing, blog posts, jobs, email/phone/socials) are placeholders — replace before launch.
+| Attribute | Effect |
+|---|---|
+| `data-split` / `data-split="load"` | headline characters rise out of masked lines (on scroll / on page load) |
+| `data-reveal` | fade + rise when it enters the viewport (batched) |
+| `data-stagger` | children cascade in with a tilt |
+| `data-pop` | sticker springs in (elastic) |
+| `data-wordfill` | words fill with ink as you scroll; child `[data-pop-at="0.5"]` stickers pop at that progress |
+| `data-draw-wrap` + `data-draw` | SVG path draws itself while scrolling |
+| `data-marquee` / `="reverse"` | infinite band that speeds up, skews and flips direction with scroll velocity |
+| `data-parallax="0.3"` | parallax drift |
+| `data-hscroll` + `data-hscroll-track` | pinned horizontal scroll (desktop) |
+| `data-count="150"` | count-up number |
+| `data-footer-logo` | footer wordmark rises in |
+| `data-progress` | top scroll-progress bar |
+| `.btn-talk` | magnetic hover (mouse only) |
 
-## Contact form
-Copy `.env.example` → `.env.local` and set `NEXT_PUBLIC_CONTACT_ENDPOINT` (e.g. Formspree).
-Empty = demo success state. You can also swap `submit` in `components/ContactForm.tsx` for an API route / server action.
+Everything respects `prefers-reduced-motion`; if JS fails, content is shown after 2.5s (`.anim-fallback`).
 
-## Notes
-- `lib/logo.ts` is traced from the PNG logo on wixnova.com — paste the original SVG path for perfectly crisp edges.
-- `Shot` mockups are illustrations; replace with `next/image` screenshots of real work.
-- All content renders without JS; motion respects `prefers-reduced-motion`.
+## Still to plug in
+- **Contact form:** copy `.env.example` → `.env.local` and set `NEXT_PUBLIC_CONTACT_ENDPOINT` (e.g. Formspree).
+- **Newsletter:** connect your email provider in `components/Newsletter.tsx`.
+- **Visuals:** `Shot` mockups are illustrations — swap for real screenshots/showreel with `next/image` / `<video>`.
+- **Logo:** `lib/logo.ts` is traced from the PNG logo — paste the original SVG path for perfectly crisp edges.
+- **Socials:** only the LinkedIn link found on wixnova.com is included — add more in `lib/data.json`.
