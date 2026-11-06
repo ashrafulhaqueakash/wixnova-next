@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================================================
+   WIXNOVA — playful editorial system
+   Paper background · ink type · logo-lime accents
+   Fonts are loaded with next/font/local in app/layout.tsx
+   ========================================================= */
+@layer base {
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body { @apply bg-paper font-sans text-ink antialiased; font-size: 17px; }
+  ::selection { @apply bg-lime text-ink; }
+  :focus-visible { @apply outline-none ring-2 ring-ink ring-offset-2 ring-offset-paper; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+}
+
+@layer components {
+  /* ---------- Type ---------- */
+  .cond { @apply font-cond uppercase; }
+  .label { @apply font-sans text-[15px] font-medium uppercase tracking-[0.02em] text-ink; }
+  .lead { @apply text-lg leading-relaxed text-ink-3 md:text-xl; }
+
+  /* ---------- Layout ---------- */
+  .section { @apply py-24 md:py-36; }
+
+  /* ---------- Pills & buttons ---------- */
+  .pill { @apply inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-paper-white px-4 py-2.5 text-[15px] font-medium text-ink transition duration-300 hover:bg-lime; }
+  .pill[aria-current='page'] { @apply bg-ink text-paper-white; }
+
+  .btn-talk { @apply inline-flex items-center gap-3 whitespace-nowrap rounded-full bg-ink py-1.5 pl-5 pr-1.5 text-[15px] font-medium text-paper-white ring-2 ring-ink transition duration-300; }
+  .btn-talk .dot { @apply grid h-9 w-9 place-items-center rounded-full bg-lime text-ink transition duration-500; }
+  .btn-talk:hover .dot { @apply rotate-45 scale-110; }
+  .btn-talk.is-lime { @apply bg-lime text-ink ring-lime; }
+  .btn-talk.is-lime .dot { @apply bg-ink text-lime; }
+  .btn-talk.is-lg { @apply py-2 pl-7 pr-2 text-lg; }
+  .btn-talk.is-lg .dot { @apply h-12 w-12; }
+
+  .btn-line { @apply inline-flex items-center gap-2 whitespace-nowrap rounded-full border-2 border-ink px-6 py-3 text-[15px] font-medium text-ink transition duration-300 hover:bg-ink hover:text-paper-white; }
+
+  /* Tilted sticker labels */
+  .sticker {
+    --r: -4deg;
+    @apply inline-block whitespace-nowrap rounded-full bg-ink px-5 py-2 font-sans text-[15px] font-medium normal-case text-paper-white md:px-6 md:py-2.5 md:text-xl;
+    transform: rotate(var(--r));
+  }
+  .sticker.is-lime { @apply bg-lime text-ink; }
+  .sticker.is-line { @apply border-2 border-ink bg-paper-white text-ink; }
+
+  /* Filter chips */
+  .chip { @apply inline-flex items-center whitespace-nowrap rounded-full border-2 border-ink/15 px-4 py-2 text-sm font-medium text-ink transition duration-300 hover:border-ink; }
+  .chip[aria-pressed='true'] { @apply border-ink bg-ink text-lime; }
+  .tag { @apply inline-flex items-center rounded-full bg-paper-2 px-3 py-1 text-xs font-medium text-ink-2; }
+
+  /* ---------- Cards ---------- */
+  .card { @apply relative rounded-[1.75rem] bg-paper-white p-7 md:p-9; }
+  .card-hover { @apply transition duration-500 hover:-translate-y-1 hover:shadow-card; }
+  .icon-sticker { @apply grid h-14 w-14 shrink-0 place-items-center rounded-2xl border-2 border-ink bg-lime text-ink shadow-sticker; transform: rotate(-6deg); }
+  .arrow-dot { @apply grid h-11 w-11 shrink-0 place-items-center rounded-full bg-lime text-ink transition duration-500; }
+  .group:hover .arrow-dot { @apply rotate-45 bg-ink text-lime; }
+
+  /* ---------- Illustrated website thumb (swap for real screenshots) ---------- */
+  .shot { @apply relative overflow-hidden rounded-[1.5rem]; background: var(--t); }
+  .shot-win { @apply absolute inset-x-[10%] bottom-[-4%] top-[14%] grid grid-cols-5 content-start gap-2 rounded-t-2xl border-2 border-ink bg-paper-white p-4 pt-9 transition duration-700 ease-out; }
+  .group:hover .shot-win { transform: translateY(-8px) rotate(-1.5deg); }
+  .shot-win::before { content: ''; @apply absolute left-4 right-4 top-3.5 h-2; background: radial-gradient(circle at 4px 4px, #10140C 3px, transparent 3.5px), radial-gradient(circle at 16px 4px, #10140C 3px, transparent 3.5px), radial-gradient(circle at 28px 4px, #10140C 3px, transparent 3.5px); }
+  .shot-win .s-text { @apply col-span-3 flex flex-col gap-2 pt-1; }
+  .shot-win .s-text i { @apply block h-3 rounded-full bg-ink; }
+  .shot-win .s-text i:nth-child(2) { @apply w-3/4; }
+  .shot-win .s-text i:nth-child(3), .shot-win .s-text i:nth-child(4) { @apply h-1.5 bg-ink/15; }
+  .shot-win .s-text i:nth-child(4) { @apply w-2/3; }
+  .shot-win .s-text b { @apply mt-1 block h-5 w-16 rounded-full border-2 border-ink; background: var(--c); }
+  .shot-win .s-img { @apply col-span-2 aspect-square rounded-xl border-2 border-ink; background: radial-gradient(circle at 70% 30%, #FBFCF7 0 16%, transparent 17%), var(--c); }
+  .shot-win .s-cards { @apply col-span-5 mt-1 grid grid-cols-3 gap-2; }
+  .shot-win .s-cards s { @apply block h-10 rounded-lg border-2 border-ink/15; }
+
+  /* ---------- FAQ as chat ---------- */
+  .chat summary { @apply inline-flex max-w-full cursor-pointer list-none items-center gap-3 rounded-[1.75rem] bg-paper-2 px-6 py-4 text-left text-lg font-medium text-ink transition duration-300 hover:bg-paper-3 md:text-xl; }
+  .chat summary::-webkit-details-marker { display: none; }
+  .chat[open] summary { @apply rounded-bl-md bg-ink text-paper-white; }
+  .chat .answer { @apply ml-auto mt-3 flex max-w-[44rem] items-end justify-end gap-3; }
+  .chat .bubble { @apply rounded-[1.75rem] rounded-br-md border-2 border-ink bg-paper-white px-6 py-5 text-[17px] leading-relaxed text-ink-2; }
+  .chat .avatar { @apply grid h-12 w-12 shrink-0 place-items-center rounded-full bg-lime font-cond text-lg text-ink; }
+
+  /* ---------- Forms ---------- */
+  .field-label { @apply mb-2 block text-sm font-medium text-ink; }
+  .field { @apply w-full rounded-2xl border-2 border-ink/15 bg-paper-white px-5 py-4 text-ink placeholder:text-ink-4 transition duration-300 focus:border-ink focus:outline-none focus:ring-4 focus:ring-lime/60; }
+  .field[aria-invalid='true'] { @apply border-red-500 ring-4 ring-red-200; }
+  .field-error { @apply mt-1.5 hidden text-xs font-medium text-red-600; }
+  .field[aria-invalid='true'] + .field-error { @apply block; }
+
+  .check-list li { @apply flex gap-3; }
+  .check-list li::before { content: '✓'; @apply grid h-5 w-5 shrink-0 place-items-center rounded-full bg-lime text-[11px] font-bold text-ink; margin-top: 2px; }
+}
+
+@layer utilities {
+  .squiggle-bg {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='300' viewBox='0 0 420 300' fill='none' stroke='%2310140C' stroke-opacity='.07' stroke-width='16' stroke-linecap='round'%3E%3Cpath d='M-20 80c60-50 120 40 80 80s-90-10-40-60 160-30 170 50-80 120-30 150 140-60 120-130 60-90 120-40 80 110 50 140'/%3E%3C/svg%3E");
+    background-size: 420px 300px;
+  }
+  .no-scrollbar { scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+}
+
+/* =================== MOTION ===================
+   Content is visible by default; <ScrollEffects/> adds .js to <html> to enable reveal effects. */
+.js [data-reveal]:not(.is-visible) { opacity: 0; transform: translateY(28px); }
+[data-reveal] { transition: opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1); }
+
+.js [data-pop] { opacity: 0; transform: scale(.4) rotate(var(--r,-4deg)); transition: opacity .4s ease, transform .6s cubic-bezier(.34,1.56,.64,1); }
+.js [data-pop].on { opacity: 1; transform: scale(1) rotate(var(--r,-4deg)); }
+
+.marquee:hover .animate-marquee, .marquee:hover .animate-marquee-r { animation-play-state: paused; }
+
+[data-stack-card] { transition: transform .7s cubic-bezier(.16,1,.3,1), opacity .5s ease; }
+
+#site-header { transition: transform .5s cubic-bezier(.16,1,.3,1); }
+#site-header.is-hidden { transform: translateY(-120%); }
+body.menu-open { overflow: hidden; }
+
+dialog::backdrop { background: rgba(16,20,12,.55); backdrop-filter: blur(4px); }
+dialog[open] { animation: pop-in .45s cubic-bezier(.34,1.56,.64,1); }
+@keyframes pop-in { from { opacity: 0; transform: scale(.92) rotate(-2deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+  .js [data-reveal]:not(.is-visible), .js [data-pop] { opacity: 1; transform: none; }
+}
