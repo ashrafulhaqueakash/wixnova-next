@@ -1,3 +1,4 @@
+import { RouteTransitions } from '@/components/Experience';
 import type { Metadata, Viewport } from 'next';
 import localFont from 'next/font/local';
 import Header from '@/components/Header';
@@ -32,6 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main id="main">{children}</main>
         <Footer />
         <Motion />
+        <RouteTransitions />
       </body>
     </html>
   );

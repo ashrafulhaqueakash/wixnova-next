@@ -203,6 +203,33 @@ export function initAnimations(gsap: GSAP, ScrollTrigger: GSAP, SplitText: GSAP,
       });
     });
 
+    /* ---------------- Editorial scene transitions + layered case study reveals ---------------- */
+    $$('[data-scene-reveal]').forEach((el) => {
+      gsap.fromTo(el, { clipPath: 'inset(12% 6% round 2rem)', scale: 0.96 }, {
+        clipPath: 'inset(0% 0% round 0rem)', scale: 1, ease: 'none',
+        scrollTrigger: { trigger: el, start: 'top 95%', end: 'top 28%', scrub: 0.8 },
+      });
+    });
+    $$('[data-scene]').forEach((section) => {
+      const content = section.querySelector<HTMLElement>('.container');
+      if (!content) return;
+      gsap.fromTo(content, { y: 65 }, { y: 0, ease: 'none', scrollTrigger: { trigger: section, start: 'top bottom', end: 'top 30%', scrub: 0.7 } });
+    });
+    $$('[data-kinetic]').forEach((el) => {
+      const spans = Array.from(el.querySelectorAll('span'));
+      if (!spans.length) return;
+      gsap.fromTo(spans, { xPercent: (i: number) => i % 2 ? 14 : -12, rotate: (i: number) => i % 2 ? 2 : -2 }, {
+        xPercent: 0, rotate: 0, ease: 'none', stagger: .12,
+        scrollTrigger: { trigger: el, start: 'top 90%', end: 'bottom 35%', scrub: .8 },
+      });
+    });
+    $$('[data-case-feature]').forEach((section) => {
+      const panel = section.querySelector('.case-feature-panel');
+      const disc = section.querySelector('.case-feature-disc');
+      if (panel) gsap.fromTo(panel, { y: 65, rotation: 3 }, { y: 0, rotation: 0, ease: 'none', scrollTrigger: { trigger: section, start: 'top 90%', end: 'top 25%', scrub: .9 } });
+      if (disc) gsap.fromTo(disc, { rotation: -45, scale: .8 }, { rotation: 30, scale: 1.15, ease: 'none', scrollTrigger: { trigger: section, start: 'top bottom', end: 'bottom top', scrub: .8 } });
+    });
+
     /* ---------------- Counters ---------------- */
     $$('[data-count]').forEach((el) => {
       const to = Number(el.getAttribute('data-count'));

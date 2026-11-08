@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { HeroShowreel, ServicesPreview, BrandInterlude, CaseStudyFeature } from '@/components/Experience';
 import { Icon } from '@/components/Icon';
 import { Avatar, SectionHead, Shot, StatNum, Sticker, TalkButton, WordFill, type Vars } from '@/components/ui';
 import { Filterable } from '@/components/interactive';
@@ -35,47 +36,9 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Hero composition — original illustration (swap for showreel video when ready) */}
-        <div className="container relative mt-16 md:mt-20" aria-hidden="true">
-          <div className="relative mx-auto h-[360px] max-w-5xl sm:h-[440px] md:h-[520px]">
-            <div className="absolute left-1/2 top-6 w-[86%] -translate-x-1/2 md:w-[72%]" data-reveal="">
-              <div className="-rotate-2 rounded-[1.75rem] border-2 border-ink bg-paper-white p-3 shadow-card">
-                <div className="flex items-center gap-2 px-2 pb-3"><i className="h-3 w-3 rounded-full bg-ink" /><i className="h-3 w-3 rounded-full bg-ink" /><i className="h-3 w-3 rounded-full bg-lime ring-2 ring-ink" /><span className="ml-3 flex h-6 flex-1 items-center rounded-full bg-paper-2 px-3 font-sans text-[11px] text-ink-3">wixnova.com</span></div>
-                <div className="grid grid-cols-5 gap-4 rounded-2xl bg-lime p-6 md:p-10">
-                  <div className="col-span-3 space-y-3">
-                    <i className="block h-5 rounded-full bg-ink md:h-7" /><i className="block h-5 w-4/5 rounded-full bg-ink md:h-7" />
-                    <i className="block h-2.5 w-11/12 rounded-full bg-ink/20" /><i className="block h-2.5 w-2/3 rounded-full bg-ink/20" />
-                    <b className="mt-3 block h-9 w-32 rounded-full bg-ink" />
-                  </div>
-                  <div className="col-span-2 grid place-items-center rounded-2xl border-2 border-ink bg-paper-white">
-                    <svg className="w-3/4" viewBox="0 0 120 80"><path d="M5 70 30 45l20 14 30-38 35 22" fill="none" stroke="#10140C" strokeWidth={6} strokeLinecap="round" strokeLinejoin="round" /><circle cx="80" cy="21" r="8" fill="#B5E96B" stroke="#10140C" strokeWidth={4} /></svg>
-                  </div>
-                </div>
-                <div className="mt-3 grid grid-cols-3 gap-3"><i className="h-16 rounded-xl border-2 border-ink/15 md:h-24" /><i className="h-16 rounded-xl border-2 border-ink/15 md:h-24" /><i className="h-16 rounded-xl border-2 border-ink/15 md:h-24" /></div>
-              </div>
-            </div>
-            <div className="absolute bottom-0 right-[2%] w-[24%] md:right-[6%] md:w-[18%]" data-parallax="-0.5">
-              <div className="rotate-[8deg] rounded-[2rem] border-2 border-ink bg-ink p-2">
-                <div className="space-y-2 rounded-[1.5rem] bg-paper-white p-3">
-                  <i className="mx-auto block h-1.5 w-10 rounded-full bg-ink/20" /><i className="block aspect-square rounded-xl bg-lime" />
-                  <i className="block h-2 rounded-full bg-ink" /><i className="block h-2 w-2/3 rounded-full bg-ink/20" /><b className="block h-6 rounded-full bg-ink" />
-                </div>
-              </div>
-            </div>
-            <div className="absolute bottom-6 left-0 w-28 md:left-[4%] md:w-40" data-parallax="0.4">
-              <svg className="animate-spin-slow" viewBox="0 0 200 200">
-                <defs><path id="badge-c" d="M100 100m-72 0a72 72 0 1 1 144 0a72 72 0 1 1-144 0" /></defs>
-                <circle cx="100" cy="100" r="98" fill="#10140C" />
-                <text fill="#B5E96B" fontFamily="var(--font-anton), Impact" fontSize="25" letterSpacing="4"><textPath href="#badge-c">150+ PROJECTS • 98% SATISFACTION • </textPath></text>
-              </svg>
-              <span className="absolute inset-0 grid place-items-center"><span className="grid h-12 w-12 place-items-center rounded-full bg-lime text-ink md:h-16 md:w-16"><Icon name="star" size={26} /></span></span>
-            </div>
-            <div className="absolute right-[12%] top-0 md:right-[16%]" data-parallax="-0.6">
-              <div className="rotate-6 rounded-2xl border-2 border-ink bg-paper-white px-4 py-3 shadow-sticker">
-                <p className="cond text-3xl leading-none md:text-4xl">48h</p><p className="text-xs font-semibold">Onboarding time</p>
-              </div>
-            </div>
-          </div>
+        {/* A live visual story built from existing results; optional owned MP4 if supplied. */}
+        <div className="container relative mt-16 pb-10 md:mt-20">
+          <HeroShowreel />
         </div>
       </section>
 
@@ -113,6 +76,7 @@ export default function HomePage() {
       </section>
 
       <ServicesPath />
+      <ServicesPreview />
       <Comparison />
       <Process />
 
@@ -145,6 +109,11 @@ export default function HomePage() {
         </div>
       </section>
 
+      <BrandInterlude />
+      <section className="container space-y-6 py-20 md:py-32" aria-label="Featured client stories">
+        <p className="label" data-reveal="">Selected client stories</p>
+        {RESULTS.slice(0, 2).map((result, index) => <CaseStudyFeature key={result.client} result={result} index={index} />)}
+      </section>
       <Principles />
       <Testimonials />
 

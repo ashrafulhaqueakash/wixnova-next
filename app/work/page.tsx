@@ -1,3 +1,4 @@
+import { CaseStudyFeature } from '@/components/Experience';
 import type { Metadata } from 'next';
 import { PageHero } from '@/components/ui';
 import { ResultsGrid } from '@/components/interactive';
@@ -20,6 +21,9 @@ export default function WorkPage() {
         ]}
         lead="Hear directly from the founders, marketers, and operators who trust Wixnova to grow their businesses every month."
       />
+      <section className="container space-y-6 pb-20" aria-label="Featured client case studies">
+        {RESULTS.slice(0, 3).map((result, index) => <CaseStudyFeature key={result.client} result={result} index={index} />)}
+      </section>
       <section className="pb-24 md:pb-36" aria-label="Client results">
         <div className="container">
           <ResultsGrid results={RESULTS} filters={RESULT_FILTERS} />

@@ -51,3 +51,25 @@ Everything respects `prefers-reduced-motion`; if JS fails, content is shown afte
 - **Visuals:** `Shot` mockups are illustrations — swap for real screenshots/showreel with `next/image` / `<video>`.
 - **Logo:** `lib/logo.ts` is traced from the PNG logo — paste the original SVG path for perfectly crisp edges.
 - **Socials:** only the LinkedIn link found on wixnova.com is included — add more in `lib/data.json`.
+
+## Experience upgrade — v4 (Huge-inspired, not copied)
+
+New components live in `components/Experience.tsx`:
+- **HeroShowreel** — cinematic outcome-based hero and optional real video from `public/showreel/wixnova-reel.mp4`. There are **no real project media files in this source archive**. The fallback uses real result names/metrics from `lib/data.json` and abstract original motion design, not fabricated client screenshots or video.
+- **CaseStudyFeature** — larger editorial project panels; added to home and work while preserving the existing results grid, filters, and detail dialog.
+- **BrandInterlude** — scroll-driven kinetic rendering of “ONE BRAND. ALL SOLUTIONS.”
+- **ServicesPreview** — keyboard-operable service tabs with live detail preview, powered by `SERVICES` in `lib/data.json`.
+- **RouteTransitions** — GSAP-lime entry/exit transition for unmodified same-origin navigation between routes; honors reduced-motion preference, ignores external links and same-page anchors.
+- **Scene transitions** — GSAP `data-scene`, `data-scene-reveal`, `data-kinetic`, `data-case-feature` hooks in `lib/animations.ts` for scroll-linked depth and text motion.
+
+### Swap the hero video
+Put your real, licensed, optimized MP4 in `public/showreel/wixnova-reel.mp4`. No component edits required. If this file is absent, the hero remains useful and accessible through the automatically rotated client outcomes and manual pause/play button.
+
+### Verification limitations
+The new TSX was syntax-checked with the TypeScript compiler parser. A full `npm run build` was **not** run in the authoring environment because packages could not be downloaded from the npm registry. Do this before production deployment:
+```
+npm ci
+npm run build
+npm run dev
+```
+Review keyboard focus, filters and internal navigation plus desktop/mobile behavior in an actual browser. If adding your own video, confirm the playback control and browser autoplay policy. No existing contact form or data backend was changed.
